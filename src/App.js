@@ -12,6 +12,7 @@ import GuardianList from './components/guardians/GuardianList';
 import SupervisorList from './components/supervisors/SupervisorList';
 import ArtTherapyList from './components/art-therapy/ArtTherapyList';
 import SessionList from './components/sessions/SessionList';
+import ProgressDashboard from './components/progress/ProgressDashboard';
 
 const theme = createTheme({
   palette: {
@@ -41,6 +42,7 @@ function App() {
                 <Route path="/supervisors" element={<SupervisorList />} />
                 <Route path="/art-therapy" element={<ArtTherapyList />} />
                 <Route path="/sessions" element={<SessionList />} />
+                <Route path="/progress" element={<ProgressDashboard />} />
               </Routes>
             </Container>
           </Box>
