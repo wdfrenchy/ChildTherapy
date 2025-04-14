@@ -19,6 +19,9 @@ import {
 import TherapyHeatmap from '../charts/TherapyHeatmap';
 import SkillsRadar from '../charts/SkillsRadar';
 import ProgressTimeline from '../charts/ProgressTimeline';
+import TherapyTreemap from '../charts/TherapyTreemap';
+import NetworkGraph from '../charts/NetworkGraph';
+import BubbleChart from '../charts/BubbleChart';
 import ExportButton from '../export/ExportButton';
 
 function TabPanel({ children, value, index, ...other }) {
@@ -127,11 +130,15 @@ function TherapyInsights() {
           onChange={handleTabChange}
           indicatorColor="primary"
           textColor="primary"
-          variant="fullWidth"
+          variant="scrollable"
+          scrollButtons="auto"
         >
           <Tab label="Progress Overview" />
           <Tab label="Session Distribution" />
           <Tab label="Skills Assessment" />
+          <Tab label="Activity Analysis" />
+          <Tab label="Therapy Network" />
+          <Tab label="Outcomes Analysis" />
         </Tabs>
         <Divider />
 
@@ -143,6 +150,15 @@ function TherapyInsights() {
         </TabPanel>
         <TabPanel value={activeTab} index={2}>
           <SkillsRadar />
+        </TabPanel>
+        <TabPanel value={activeTab} index={3}>
+          <TherapyTreemap />
+        </TabPanel>
+        <TabPanel value={activeTab} index={4}>
+          <NetworkGraph />
+        </TabPanel>
+        <TabPanel value={activeTab} index={5}>
+          <BubbleChart />
         </TabPanel>
       </Paper>
 
