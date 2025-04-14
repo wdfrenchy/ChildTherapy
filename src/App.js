@@ -10,6 +10,7 @@ import TherapistList from './components/therapists/TherapistList';
 import ChildList from './components/children/ChildList';
 import GuardianList from './components/guardians/GuardianList';
 import SupervisorList from './components/supervisors/SupervisorList';
+import ArtTherapyList from './components/art-therapy/ArtTherapyList';
 
 const theme = createTheme({
   palette: {
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/children" element={<ChildList />} />
                 <Route path="/guardians" element={<GuardianList />} />
                 <Route path="/supervisors" element={<SupervisorList />} />
+                <Route path="/art-therapy" element={<ArtTherapyList />} />
               </Routes>
             </Container>
           </Box>
