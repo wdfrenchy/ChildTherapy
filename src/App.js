@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, Box, Container } from '@mui/material';
 import Navigation from './components/Navigation';
+import { NotificationProvider } from './contexts/NotificationContext';
 
 // Import pages
 import Dashboard from './components/Dashboard';
@@ -14,6 +15,7 @@ import ArtTherapyList from './components/art-therapy/ArtTherapyList';
 import SessionList from './components/sessions/SessionList';
 import ProgressDashboard from './components/progress/ProgressDashboard';
 import AnalyticsDashboard from './components/analytics/AnalyticsDashboard';
+import NotificationCenter from './components/notifications/NotificationCenter';
 
 const theme = createTheme({
   palette: {
@@ -30,26 +32,30 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Box sx={{ display: 'flex' }}>
-          <Navigation />
-          <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8 }}>
-            <Container>
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/therapists" element={<TherapistList />} />
-                <Route path="/children" element={<ChildList />} />
-                <Route path="/guardians" element={<GuardianList />} />
-                <Route path="/supervisors" element={<SupervisorList />} />
-                <Route path="/art-therapy" element={<ArtTherapyList />} />
-                <Route path="/sessions" element={<SessionList />} />
-                <Route path="/progress" element={<ProgressDashboard />} />
-                <Route path="/analytics" element={<AnalyticsDashboard />} />
-              </Routes>
-            </Container>
+      <NotificationProvider>
+        <Router>
+          <Box sx={{ display: 'flex' }}>
+            <Navigation>
+              <NotificationCenter />
+            </Navigation>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8 }}>
+              <Container>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/therapists" element={<TherapistList />} />
+                  <Route path="/children" element={<ChildList />} />
+                  <Route path="/guardians" element={<GuardianList />} />
+                  <Route path="/supervisors" element={<SupervisorList />} />
+                  <Route path="/art-therapy" element={<ArtTherapyList />} />
+                  <Route path="/sessions" element={<SessionList />} />
+                  <Route path="/progress" element={<ProgressDashboard />} />
+                  <Route path="/analytics" element={<AnalyticsDashboard />} />
+                </Routes>
+              </Container>
+            </Box>
           </Box>
-        </Box>
-      </Router>
+        </Router>
+      </NotificationProvider>
     </ThemeProvider>
   );
 }
