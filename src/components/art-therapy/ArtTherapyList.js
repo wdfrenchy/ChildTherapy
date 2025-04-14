@@ -68,7 +68,7 @@ const mockArtTherapies = [
       'Sculpting tools',
       'Work surfaces',
     ],
-    prompt: 'Create a figure that represents how you're feeling today',
+    prompt: 'Create a figure that represents how you are feeling today',
   },
 ];
 
