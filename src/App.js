@@ -4,8 +4,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, Box, Container } from '@mui/material';
 import Navigation from './components/Navigation';
 
-// Import pages as we create them
+// Import pages
 import Dashboard from './components/Dashboard';
+import TherapistList from './components/therapists/TherapistList';
 
 const theme = createTheme({
   palette: {
@@ -29,7 +30,7 @@ function App() {
             <Container>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                {/* Add more routes as we create components */}
+                <Route path="/therapists" element={<TherapistList />} />
               </Routes>
             </Container>
           </Box>
