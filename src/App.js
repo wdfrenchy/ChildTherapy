@@ -13,6 +13,7 @@ import SupervisorList from './components/supervisors/SupervisorList';
 import ArtTherapyList from './components/art-therapy/ArtTherapyList';
 import SessionList from './components/sessions/SessionList';
 import ProgressDashboard from './components/progress/ProgressDashboard';
+import AnalyticsDashboard from './components/analytics/AnalyticsDashboard';
 
 const theme = createTheme({
   palette: {
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/art-therapy" element={<ArtTherapyList />} />
                 <Route path="/sessions" element={<SessionList />} />
                 <Route path="/progress" element={<ProgressDashboard />} />
+                <Route path="/analytics" element={<AnalyticsDashboard />} />
               </Routes>
             </Container>
           </Box>
