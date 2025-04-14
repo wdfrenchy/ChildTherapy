@@ -22,6 +22,9 @@ import ProgressTimeline from '../charts/ProgressTimeline';
 import TherapyTreemap from '../charts/TherapyTreemap';
 import NetworkGraph from '../charts/NetworkGraph';
 import BubbleChart from '../charts/BubbleChart';
+import SunburstChart from '../charts/SunburstChart';
+import PolarChart from '../charts/PolarChart';
+import StreamGraph from '../charts/StreamGraph';
 import ExportButton from '../export/ExportButton';
 
 function TabPanel({ children, value, index, ...other }) {
@@ -139,6 +142,9 @@ function TherapyInsights() {
           <Tab label="Activity Analysis" />
           <Tab label="Therapy Network" />
           <Tab label="Outcomes Analysis" />
+          <Tab label="Goals Hierarchy" />
+          <Tab label="Emotional States" />
+          <Tab label="Therapy Trends" />
         </Tabs>
         <Divider />
 
@@ -159,6 +165,15 @@ function TherapyInsights() {
         </TabPanel>
         <TabPanel value={activeTab} index={5}>
           <BubbleChart />
+        </TabPanel>
+        <TabPanel value={activeTab} index={6}>
+          <SunburstChart />
+        </TabPanel>
+        <TabPanel value={activeTab} index={7}>
+          <PolarChart />
+        </TabPanel>
+        <TabPanel value={activeTab} index={8}>
+          <StreamGraph />
         </TabPanel>
       </Paper>
 
