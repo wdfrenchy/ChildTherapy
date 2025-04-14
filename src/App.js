@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 // Import pages
 import Dashboard from './components/Dashboard';
 import TherapistList from './components/therapists/TherapistList';
+import ChildList from './components/children/ChildList';
 
 const theme = createTheme({
   palette: {
@@ -31,6 +32,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/therapists" element={<TherapistList />} />
+                <Route path="/children" element={<ChildList />} />
               </Routes>
             </Container>
           </Box>
